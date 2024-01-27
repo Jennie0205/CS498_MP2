@@ -8,7 +8,7 @@ app = Flask(__name__)
 def handle_request():
     if request.method == 'POST':
         # Handling HTTP POST request
-        subprocess.Popen(['python', 'stress_cpu.py'])
+        subprocess.Popen(['python3', 'stress_cpu.py'])
         return 'Stressing CPU process started.\n', 200
     elif request.method == 'GET':
         # Handling HTTP GET request
@@ -16,4 +16,4 @@ def handle_request():
         return jsonify({'private_ip': private_ip}), 200
 
 if __name__ == '__main__':
-    app.run(host='0.0.0.0', port=80)
+    app.run(host='0.0.0.0', port=5000)
